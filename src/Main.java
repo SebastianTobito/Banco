@@ -25,6 +25,27 @@ public class Main {
         while(opcion != 7){
             System.out.println(menu);
             opcion = scanner.nextInt();
+            if(opcion == 1){
+                System.out.println("Su saldo es de: $"+saldo);
+            }else if(opcion == 2){
+                System.out.println("Cuánto quiere sacar");
+                double retiro = scanner.nextDouble();
+                if (retiro>saldo){
+                    System.out.println("No posee esa cantidad en su cuenta, su retiro no puede ser efectuado");
+                }else {
+                    saldo = saldo - retiro;
+                    System.out.println("Su nuevo saldo es: $" + saldo);
+                }
+            }else if(opcion == 3){
+                System.out.println("Cuánto quiere depositar");
+                double deposito = scanner.nextDouble();
+                saldo = saldo + deposito;
+                System.out.println("Su nuevo saldo es: $" + saldo);
+            }else if(opcion == 7){
+                System.out.println("Hasta luego que tenga un buen día");
+            } else{
+                System.out.println("Opción no valida");
+            }
         }
     }
 }
